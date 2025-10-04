@@ -183,7 +183,7 @@ const yearOptions = computed(() => {
             class="text-lg font-bold hover:text-primary"
             target="_blank"
             external
-            :to="`https://github.com/HoshinoSuzumi/chronoframe/releases/tag/v${$config.public.VERSION}`"
+            :to="`https://github.com/HoshinoSuzumi/tangmantan/releases/tag/v${$config.public.VERSION}`"
           >
             v{{ $config.public.VERSION }}
           </NuxtLink>
