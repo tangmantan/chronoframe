@@ -52,7 +52,7 @@ const isRepoLinkHovering = ref(false)
 </script>
 
 <template>
-  <div class="w-full relative overflow-hidden">
+  <div class="w-full relative overflow-hidden font-[AlimamaDongFangDaKai]">
     <div
       class="absolute inset-0 -z-10 blur-3xl scale-110 bg-cover bg-center opacity-35"
       :style="{
@@ -76,7 +76,7 @@ const isRepoLinkHovering = ref(false)
               />
             </div>
             <h1
-              class="text-2xl text-neutral-900 dark:text-white/70 mb-2 font-[阿里妈妈东方大楷 Regular]"
+              class="text-2xl text-neutral-900 dark:text-white/70 mb-2"
             >
               {{ config.public.APP_TITLE }}
             </h1>
@@ -84,10 +84,7 @@ const isRepoLinkHovering = ref(false)
           <div
             class="text-neutral-600 dark:text-white/70 space-y-1 text-center"
           >
-            <p
-              v-if="stats?.total"
-              class="text-xs font-medium"
-            >
+            <p v-if="stats?.total" class="text-xs font-medium">
               {{
                 $t('ui.stats.totalPhotosWithRange', {
                   range: dateRangeText,
@@ -95,10 +92,7 @@ const isRepoLinkHovering = ref(false)
                 })
               }}
             </p>
-            <p
-              v-else
-              class="text-xs font-medium"
-            >
+            <p v-else class="text-xs font-medium ">
               {{ $t('ui.stats.noPhotosTip') }}
             </p>
             <p

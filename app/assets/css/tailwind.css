@@ -5,15 +5,14 @@
 /* 链接地址：https://www.iconfont.cn/fonts/detail?spm=a313x.fonts_index.i1.d9df05512.67e03a81J7Okrt&cnid=IhcTcFymWeyf */
 /* 输入要生成的文字，点击代码引用，复制到此处 */
 @font-face {
-  font-family: "阿里妈妈东方大楷 Regular";
-  src: url("//at.alicdn.com/wf/webfont/uoyBX1BZj3Nf/Zac4ITHXtHLp.woff2") format("woff2"), url("//at.alicdn.com/wf/webfont/uoyBX1BZj3Nf/ZUtKVX2Pj3T6.woff") format("woff");
+  font-family: "AlimamaDongFangDaKai";
+  src: url("//at.alicdn.com/wf/webfont/uoyBX1BZj3Nf/knFAF2pNEQPA.woff2") format("woff2"), url("//at.alicdn.com/wf/webfont/uoyBX1BZj3Nf/lvucAxqixIv1.woff") format("woff");
   font-variation-settings: normal;
   font-display: swap;
-  font-weight: 400;
 }
 
 .webfont {
-  font-family: "阿里妈妈东方大楷 Regular";
+  font-family: "AlimamaDongFangDaKai";
   font-variation-settings: normal; /* Chrome 140 以下版本需要 */
 }
 

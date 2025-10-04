@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import TanmantangIcon from '~/components/icon/TanmantangIcon.vue'
+
 const config = useRuntimeConfig()
 </script>
 
