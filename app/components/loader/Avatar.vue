@@ -15,11 +15,9 @@ const config = useRuntimeConfig()
         :src="config.public.APP_AVATAR_URL"
         alt="Loading..."
       />
-      <img
+      <TanmantangIcon
         v-else
         class="w-full h-full object-cover"
-        src="~/assets/images/avatar.webp"
-        alt="Loading..."
       />
     </div>
   </div>

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { motion, AnimatePresence } from 'motion-v'
 import avatarImage from '~/assets/images/avatar.webp'
+import TanmantangIcon from '~/components/icon/TanmantangIcon.vue'
 
 defineProps<{
   stats?: {
@@ -58,9 +59,6 @@ const isRepoLinkHovering = ref(false)
         backgroundImage: `url(${config.public.APP_AVATAR_URL || avatarImage})`,
       }"
     ></div>
-    <div
-      class="absolute inset-0 -z-10 bg-white/50 dark:bg-neutral-900/50"
-    ></div>
     <div class="flex flex-col items-center py-6 pb-0 gap-2">
       <AuthState>
         <template #default="{ loggedIn, clear }">
@@ -72,22 +70,19 @@ const isRepoLinkHovering = ref(false)
               >
                 <Icon name="tabler:star-filled" />
               </div>
-              <img
-                :src="config.public.APP_AVATAR_URL || avatarImage"
-                class="size-12 rounded-full object-cover"
+              <TanmantangIcon
                 :class="!loggedIn && 'cursor-pointer'"
-                alt="Author's avatar"
                 @click="!loggedIn && handleOpenLogin()"
               />
             </div>
             <h1
-              class="text-2xl font-bold text-neutral-900 dark:text-white/90 mb-2"
+              class="text-2xl text-neutral-900 dark:text-white/70 mb-2 font-[阿里妈妈东方大楷 Regular]"
             >
               {{ config.public.APP_TITLE }}
             </h1>
           </div>
           <div
-            class="text-neutral-600 dark:text-white/30 space-y-1 text-center"
+            class="text-neutral-600 dark:text-white/70 space-y-1 text-center"
           >
             <p
               v-if="stats?.total"
@@ -108,13 +103,13 @@ const isRepoLinkHovering = ref(false)
             </p>
             <p
               v-if="config.public.APP_SLOGAN"
-              class="font-[Pacifico]"
+              class="font-[Pacifico] text-neutral-600 dark:text-white/70"
             >
               {{ config.public.APP_SLOGAN }}
             </p>
           </div>
           <div
-            class="flex items-center gap-0 p-1 bg-white/30 dark:bg-neutral-900/50 rounded-full"
+            class="flex items-center gap-0 p-1 bg-white dark:bg-neutral-900 rounded-full"
           >
             <UTooltip :text="$t('ui.action.globe.tooltip')">
               <UButton
@@ -263,7 +258,6 @@ const isRepoLinkHovering = ref(false)
               class="inline-block text-sm -mt-[1px]"
               mode="svg"
             />
-            ChronoFrame
             <AnimatePresence>
               <motion.span
                 v-if="isRepoLinkHovering"
@@ -273,7 +267,7 @@ const isRepoLinkHovering = ref(false)
                 :transition="{ duration: 0.3, ease: 'easeInOut' }"
                 style="overflow: hidden; white-space: nowrap"
               >
-                ({{ $config.public.VERSION }})
+                ChronoFrame ({{ $config.public.VERSION }})
               </motion.span>
             </AnimatePresence>
           </a>
