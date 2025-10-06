@@ -1,6 +1,6 @@
 {
   "name": "chronoframe",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "author": {
     "name": "Timothy Yin",
     "email": "master@uniiem.com"
@@ -55,6 +55,7 @@
     "motion-v": "^1.7.0",
     "nuxt": "^4.1.2",
     "nuxt-auth-utils": "0.5.23",
+    "nuxt-gtag": "4.0.0",
     "nuxt-mapbox": "1.6.4",
     "nuxt-og-image": "5.1.11",
     "pinia": "^3.0.3",
