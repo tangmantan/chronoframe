@@ -27,12 +27,12 @@ const description = computed(() => (props.description || '').slice(0, 200))
       v-if="thumbnailJpegUrl"
       :src="thumbnailJpegUrl"
       class="absolute inset-y-0 right-0 object-cover"
-      width="60%"
+      width="80%"
       height="100%"
     />
     <div
       v-if="thumbnailJpegUrl"
-      class="absolute inset-y-0 right-0 w-[60%]"
+      class="absolute inset-y-0 right-0 w-[80%]"
       :style="{
         background:
           'linear-gradient(90deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.3) 35%, rgba(10,10,10,0.1) 100%)',
