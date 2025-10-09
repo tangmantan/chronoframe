@@ -86,7 +86,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
             mode="svg"
           />
           <span class="truncate">
-            {{ photo.exif?.Model }}
+            {{ photo.exif?.Make+" "+photo.exif?.Model }}
           </span>
         </div>
       </div>
