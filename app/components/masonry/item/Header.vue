@@ -27,8 +27,13 @@ const isDark = computed({
   },
 })
 
-const handleOpenLogin = () => {
-  router.push('/signin')
+// 根据登录状态处理点击事件
+const handleAvatarClick = (loggedIn: boolean) => {
+  if (!loggedIn) {
+    router.push('/signin')
+  } else {
+    router.push('/dashboard')
+  }
 }
 
 const { hasActiveFilters, selectedCounts } = usePhotoFilters()
@@ -69,23 +74,21 @@ const isRepoLinkHovering = ref(false)
             <div class="relative mx-auto">
               <div
                 v-if="loggedIn"
-                class="absolute -bottom-0.5 -right-0.5 bg-amber-500 text-white rounded-full flex items-center justify-center size-5 text-xs drop-shadow-lg drop-shadow-amber-500/30"
+                class="absolute -bottom-0.5 -right-0.5 text-info rounded-full flex items-center justify-center size-5 text-xs drop-shadow-lg drop-shadow-amber-500/30"
               >
-                <Icon name="tabler:star-filled" />
+                <Icon size="20" name="tabler:dashboard" />
               </div>
               <img
                 v-if="config.public.app.avatarUrl"
                 :src="config.public.app.avatarUrl || avatarImage"
-                class="size-12 rounded-full object-cover"
-                :class="!loggedIn && 'cursor-pointer'"
+                class="size-12 rounded-full object-cover cursor-pointer"
                 alt="Author's avatar"
-                @click="!loggedIn && handleOpenLogin()"
+                @click="handleAvatarClick(loggedIn)"
               />
               <TanmantangIcon 
                 v-else 
-                class="rounded-full object-cover"
-                :class="!loggedIn && 'cursor-pointer'"
-                @click="!loggedIn && handleOpenLogin()"
+                class="rounded-full object-cover cursor-pointer"
+                @click="handleAvatarClick(loggedIn)"
               />
             </div>
             <h1
