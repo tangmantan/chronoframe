@@ -1,6 +1,6 @@
 {
   "name": "chronoframe",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "author": {
     "name": "Timothy Yin",
     "email": "master@uniiem.com"
@@ -27,7 +27,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.873.0",
+    "@aws-sdk/client-s3": "^3.908.0",
     "@aws-sdk/s3-request-presigner": "^3.878.0",
     "@chronoframe/webgl-image": "workspace:*",
     "@nuxt/fonts": "0.11.4",
@@ -40,12 +40,11 @@
     "@tailwindcss/vite": "^4.1.12",
     "@unhead/vue": "^2.0.5",
     "@vingle/bmp-js": "^0.2.5",
-    "@vueuse/nuxt": "13.8.0",
+    "@vueuse/nuxt": "13.9.0",
     "@yeger/vue-masonry-wall": "^5.1.0",
     "better-sqlite3": "^12.2.0",
     "cloudflare": "^4.5.0",
     "dayjs-nuxt": "2.1.11",
-    "db0": "^0.3.2",
     "drizzle-orm": "^0.44.4",
     "es-toolkit": "^1.39.10",
     "exiftool-vendored": "^30.3.0",
@@ -59,8 +58,8 @@
     "nuxt-mapbox": "1.6.4",
     "nuxt-og-image": "5.1.11",
     "pinia": "^3.0.3",
-    "reka-ui": "^2.5.0",
-    "sharp": "^0.34.3",
+    "reka-ui": "^2.5.1",
+    "sharp": "^0.34.4",
     "swiper": "^11.2.10",
     "systeminformation": "^5.27.10",
     "tailwind-merge": "^3.3.1",
@@ -107,7 +106,7 @@
       ]
     },
     "overrides": {
-      "sharp": "0.34.3"
+      "sharp": "0.34.4"
     }
   }
 }

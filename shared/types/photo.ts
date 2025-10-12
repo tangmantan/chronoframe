@@ -2,8 +2,16 @@ import type { Tags } from 'exiftool-vendored'
 
 export interface NeededExif {
   Title?: string
+  XPTitle?: string
   Subject?: string[]
   Keywords?: string[]
+  XPKeywords?: string
+
+  Description?: Tags['Description']
+  ImageDescription?: Tags['ImageDescription']
+  CaptionAbstract?: Tags['Caption-Abstract']
+  XPComment?: Tags['XPComment']
+  UserComment?: Tags['UserComment']
 
   zone?: string
   tz?: string
@@ -76,6 +84,15 @@ export interface NeededExif {
   MPImageType?: Tags['MPImageType']
 
   Rating?: number
+
+  // Motion Photo (XMP) related fields
+  MotionPhoto?: Tags['MotionPhoto']
+  MotionPhotoVersion?: Tags['MotionPhotoVersion']
+  MotionPhotoPresentationTimestampUs?: Tags['MotionPhotoPresentationTimestampUs']
+  MicroVideo?: Tags['MicroVideo']
+  MicroVideoVersion?: Tags['MicroVideoVersion']
+  MicroVideoOffset?: Tags['MicroVideoOffset']
+  MicroVideoPresentationTimestampUs?: Tags['MicroVideoPresentationTimestampUs']
 }
 
 export interface PhotoInfo {
