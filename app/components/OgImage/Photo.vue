@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { formatCameraInfo } from '~/utils/camera'
+
 const props = withDefaults(
   defineProps<{
     photo?: Photo
@@ -55,7 +57,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
         <h1
           v-if="title"
           class="m-0 text-8xl font-bold mb-2 text-white max-w-4/5"
-          style="display: block; line-clamp: 1; text-overflow: ellipsis"
+          style="display: block; line-clamp: 2; text-overflow: ellipsis"
         >
           {{ title }}
         </h1>
@@ -93,7 +95,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
               mode="svg"
             />
             <span class="truncate">
-              {{ photo.exif?.Make+" "+photo.exif?.Model }}
+              {{ formatCameraInfo(photo.exif?.Make, photo.exif?.Model) }}
             </span>
           </div>
         </div>
