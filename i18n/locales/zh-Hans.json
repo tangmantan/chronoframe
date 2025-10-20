@@ -333,6 +333,7 @@
         "srgb": "sRGB",
         "adobeRgb": "Adobe RGB",
         "wideGamutRgb": "广色域 RGB",
+        "displayP3": "Display P3",
         "iccProfile": "ICC 配置文件",
         "uncalibrated": "未校准",
         "rgb": "RGB"
@@ -493,7 +494,10 @@
       },
       "table": {
         "columns": {
-          "thumbnail": "缩略图",
+          "thumbnail": {
+            "title": "缩略图",
+            "action": "在新窗口打开照片"
+          },
           "id": "照片ID",
           "title": "照片标题",
           "tags": "关键词",

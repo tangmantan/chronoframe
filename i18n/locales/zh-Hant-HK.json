@@ -332,6 +332,7 @@
         "srgb": "sRGB",
         "adobeRgb": "Adobe RGB",
         "wideGamutRgb": "廣色域 RGB",
+        "displayP3": "Display P3",
         "iccProfile": "ICC 設定檔",
         "uncalibrated": "未校正",
         "rgb": "RGB"
@@ -436,7 +437,10 @@
       },
       "table": {
         "columns": {
-          "thumbnail": "縮圖",
+          "thumbnail": {
+            "title": "縮圖",
+            "action": "在新視窗開啟相片"
+          },
           "id": "相片 ID",
           "title": "相片標題",
           "tags": "關鍵字",

@@ -336,6 +336,7 @@
         "srgb": "sRGB",
         "adobeRgb": "Adobe RGB",
         "wideGamutRgb": "Wide Gamut RGB",
+        "displayP3": "Display P3",
         "iccProfile": "ICC Profile",
         "uncalibrated": "Uncalibrated",
         "rgb": "RGB"
@@ -493,7 +494,10 @@
       },
       "table": {
         "columns": {
-          "thumbnail": "Thumbnail",
+          "thumbnail": {
+            "title": "Thumbnail",
+            "action": "Open Photo in New Tab"
+          },
           "id": "Photo ID",
           "title": "Photo Title",
           "tags": "Keywords",
