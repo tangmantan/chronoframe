@@ -132,7 +132,7 @@ const onShareSite = () => {
     body: `## Description / Motto\n\n${config.public.app.slogan}\n\n## URL\n\n[${window.location.origin}](${window.location.origin})`,
   })
   window.open(
-    `https://github.com/HoshinoSuzumi/chronoframe/discussions/new?${discussionParams}`,
+    `https://github.com/tangmantan/chronoframe/discussions/new?${discussionParams}`,
     '_blank',
   )
 }

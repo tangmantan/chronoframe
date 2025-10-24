@@ -33,12 +33,12 @@ const description = computed(() => (props.description || '').slice(0, 200))
       v-if="thumbnailJpegUrl"
       :src="thumbnailJpegUrl"
       class="absolute inset-y-0 right-0 object-cover"
-      width="60%"
+      width="80%"
       height="100%"
     />
     <div
       v-if="thumbnailJpegUrl"
-      class="absolute inset-y-0 right-0 w-[60%]"
+      class="absolute inset-y-0 right-0 w-[80%]"
       :style="{
         background:
           'linear-gradient(90deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.3) 35%, rgba(10,10,10,0.1) 100%)',
@@ -57,7 +57,7 @@ const description = computed(() => (props.description || '').slice(0, 200))
         <h1
           v-if="title"
           class="m-0 text-8xl font-bold mb-2 text-white max-w-4/5"
-          style="display: block; line-clamp: 1; text-overflow: ellipsis"
+          style="display: block; line-clamp: 2; text-overflow: ellipsis"
         >
           {{ title }}
         </h1>

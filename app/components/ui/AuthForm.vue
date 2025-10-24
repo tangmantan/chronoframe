@@ -2,6 +2,7 @@
 import { z } from 'zod'
 import type { ButtonProps, FormSubmitEvent } from '@nuxt/ui'
 import { twMerge } from 'tailwind-merge'
+import TanmantangIcon from '../icon/TanmantangIcon.vue';
 
 defineProps<{
   icon?: string
@@ -57,14 +58,9 @@ const onSubmit = async (event: FormSubmitEvent<Schema>) => {
           class="size-8 inline-block shrink-0"
         />
       </div>
-      <!-- Logo -->
-      <!-- @note: this will not to be replaced with user avatar -->
-      <div class="mb-2">
-        <img
-          src="/web-app-manifest-192x192.png"
-          alt="App Logo"
-          class="size-24 rounded-full object-cover"
-        />
+      <!-- TanmantangSVG -->
+      <div v-if="TanmantangIcon" class="mb-2">
+        <TanmantangIcon class="size-24 inline-block shrink-0" />
       </div>
       <!-- Title -->
       <div

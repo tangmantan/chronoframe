@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { motion, AnimatePresence } from 'motion-v'
+import TanmantangIcon from '~/components/icon/TanmantangIcon.vue'
 
 defineProps<{
   stats?: {
@@ -25,8 +26,13 @@ const isDark = computed({
   },
 })
 
-const handleOpenLogin = () => {
-  router.push('/signin')
+// 根据登录状态处理点击事件
+const handleAvatarClick = (loggedIn: boolean) => {
+  if (!loggedIn) {
+    router.push('/signin')
+  } else {
+    router.push('/dashboard')
+  }
 }
 
 const { hasActiveFilters, selectedCounts } = usePhotoFilters()
@@ -60,33 +66,38 @@ const isRepoLinkHovering = ref(false)
     <div
       class="absolute inset-0 -z-10 bg-white/50 dark:bg-neutral-900/50"
     ></div>
-    <div class="flex flex-col items-center py-6 pb-0 gap-2">
+    <div class="flex flex-col items-center py-6 pb-0 gap-2 font-[AlimamaDongFangDaKai]">
       <AuthState>
         <template #default="{ loggedIn, clear }">
           <div class="flex flex-col items-center gap-2">
             <div class="relative mx-auto">
               <div
                 v-if="loggedIn"
-                class="absolute -bottom-0.5 -right-0.5 bg-amber-500 text-white rounded-full flex items-center justify-center size-5 text-xs drop-shadow-lg drop-shadow-amber-500/30"
+                class="absolute -bottom-0.5 -right-0.5 text-info rounded-full flex items-center justify-center size-5 text-xs drop-shadow-lg drop-shadow-amber-500/30"
               >
-                <Icon name="tabler:star-filled" />
+                <Icon size="20" name="tabler:dashboard" />
               </div>
               <img
+                v-if="config.public.app.avatarUrl"
                 :src="config.public.app.avatarUrl || '/web-app-manifest-192x192.png'"
-                class="size-16 rounded-full object-cover"
-                :class="!loggedIn && 'cursor-pointer'"
+                class="size-12 rounded-full object-cover cursor-pointer"
                 alt="Author's avatar"
-                @click="!loggedIn && handleOpenLogin()"
+                @click="handleAvatarClick(loggedIn)"
+              />
+              <TanmantangIcon 
+                v-else 
+                class="rounded-full object-cover cursor-pointer"
+                @click="handleAvatarClick(loggedIn)"
               />
             </div>
             <h1
-              class="text-2xl font-bold text-neutral-900 dark:text-white/90 mb-2"
+              class="text-2xl text-neutral-900 dark:text-white/90 mb-2"
             >
               {{ config.public.app.title }}
             </h1>
           </div>
           <div
-            class="text-neutral-600 dark:text-white/30 space-y-1 text-center"
+            class="text-neutral-600 dark:text-white/60 space-y-1 text-center"
           >
             <p
               v-if="stats?.total"
@@ -113,7 +124,7 @@ const isRepoLinkHovering = ref(false)
             </p>
           </div>
           <div
-            class="flex items-center gap-0 p-1 bg-white/30 dark:bg-neutral-900/50 rounded-full"
+            class="flex items-center gap-0 p-1 bg-white/70 dark:bg-neutral-900/50 rounded-full"
           >
             <UTooltip :text="$t('ui.action.globe.tooltip')">
               <UButton
@@ -272,7 +283,6 @@ const isRepoLinkHovering = ref(false)
               class="inline-block text-sm -mt-[1px]"
               mode="svg"
             />
-            ChronoFrame
             <AnimatePresence>
               <motion.span
                 v-if="isRepoLinkHovering"
@@ -282,7 +292,7 @@ const isRepoLinkHovering = ref(false)
                 :transition="{ duration: 0.3, ease: 'easeInOut' }"
                 style="overflow: hidden; white-space: nowrap"
               >
-                ({{ $config.public.VERSION }})
+                ChronoFrame ({{ $config.public.VERSION }})
               </motion.span>
             </AnimatePresence>
           </a>
