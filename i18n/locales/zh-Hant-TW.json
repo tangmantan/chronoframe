@@ -43,7 +43,8 @@
           "fileSizeAsc": "檔案大小（升冪）",
           "fileSizeDesc": "檔案大小（降冪）",
           "titleAsc": "標題（A-Z）",
-          "titleDesc": "標題（Z-A）"
+          "titleDesc": "標題（Z-A）",
+          "shuffle": "打亂順序"
         },
         "title": "排序方式",
         "tooltip": "相片排序"
@@ -357,7 +358,8 @@
     "globe": "照片地球儀",
     "queue": "佇列管理",
     "logs": "系統日誌",
-    "albums": "相簿"
+    "albums": "相簿",
+    "siteAdministration": "站點設置"
   },
   "auth": {
     "form": {
@@ -473,10 +475,10 @@
       },
       "actions": {
         "reprocess": "重新處理",
-        "viewLivePhoto": "原況照片預覽",
         "refreshLocation": "重新取得城市",
         "delete": "刪除",
-        "editMetadata": "編輯資訊"
+        "editMetadata": "編輯資訊",
+        "previewPhoto": "照片預覽"
       },
       "selection": {
         "selected": "已選擇 {count} / {total} 列",

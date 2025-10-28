@@ -48,6 +48,10 @@ export default defineConfig({
             link: '/configuration/storage-providers',
           },
           { text: 'Map Providers', link: '/configuration/map-providers' },
+          {
+            text: 'Location Providers',
+            link: '/configuration/location-providers',
+          },
         ],
       },
       {
@@ -61,6 +65,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/HoshinoSuzumi/chronoframe' },
+      { icon: 'discord', link: 'https://discord.gg/mDZjCwdQGk' },
     ],
 
     editLink: {

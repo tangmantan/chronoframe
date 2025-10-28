@@ -1,6 +1,6 @@
 {
   "name": "chronoframe",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "author": {
     "name": "Timothy Yin",
     "email": "master@uniiem.com"
@@ -34,7 +34,7 @@
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "2.0.0",
     "@nuxt/image": "1.11.0",
-    "@nuxt/ui": "^3.3.4",
+    "@nuxt/ui": "^4.1.0",
     "@nuxthub/core": "0.9.0",
     "@nuxtjs/i18n": "10.1.0",
     "@pinia/nuxt": "^0.11.2",
@@ -52,7 +52,7 @@
     "heic-convert": "^2.1.0",
     "heic-to": "^1.2.2",
     "maplibre-gl": "^5.9.0",
-    "motion-v": "^1.7.0",
+    "motion-v": "^1.7.4",
     "nuxt": "^4.1.2",
     "nuxt-auth-utils": "0.5.23",
     "nuxt-gtag": "4.0.0",

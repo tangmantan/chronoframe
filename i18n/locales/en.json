@@ -35,7 +35,8 @@
           "fileSizeAsc": "File Size (Ascending)",
           "fileSizeDesc": "File Size (Descending)",
           "titleAsc": "Title (Ascending)",
-          "titleDesc": "Title (Descending)"
+          "titleDesc": "Title (Descending)",
+          "shuffle": "Shuffle"
         }
       },
       "theme": {
@@ -115,7 +116,7 @@
       "noPhotosTip": "Nno photos yet, upload some now!"
     },
     "livePhoto": "Live Photo",
-    "indexPanelCountCity":"and more other cities",
+    "indexPanelCountCity": "and more other cities",
     "album": {
       "noImage": "Empty Album",
       "emptyAlbumTip": "Add photos to get started",
@@ -163,14 +164,14 @@
       "add": "React",
       "change": "Reacted",
       "count": "no reactions | {count} reaction | {count} reactions",
-      "like":"like",
-      "love":"love",
-      "amazing":"amazing",
-      "funny":"funny",
-      "wow":"wow",
-      "sad":"sad",
-      "fire":"fire",
-      "sparkle":"sparkle"
+      "like": "like",
+      "love": "love",
+      "amazing": "amazing",
+      "funny": "funny",
+      "wow": "wow",
+      "sad": "sad",
+      "fire": "fire",
+      "sparkle": "sparkle"
     },
     "photoload": {
       "loadError": "Image loading failed",
@@ -358,7 +359,8 @@
     "globe": "Photo Globe",
     "queue": "Queue Management",
     "logs": "System Logs",
-    "albums": "Albums"
+    "albums": "Albums",
+    "siteAdministration": "Site settings"
   },
   "auth": {
     "form": {
@@ -530,10 +532,10 @@
       },
       "actions": {
         "reprocess": "Reprocess",
-        "viewLivePhoto": "Live Photo Preview",
         "refreshLocation": "Re-fetch City",
         "delete": "Delete",
-        "editMetadata": "Edit Metadata"
+        "editMetadata": "Edit Metadata",
+        "previewPhoto": "Photo Preview"
       },
       "selection": {
         "selected": "{count} / {total} rows selected",
