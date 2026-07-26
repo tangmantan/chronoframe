@@ -476,7 +476,8 @@
     },
     "unknownError": "Unknown error",
     "validation": {
-      "isRequired": "{field} is required"
+      "isRequired": "{field} is required",
+      "fieldRequired": "This field is required"
     }
   },
   "upload": {
@@ -1358,7 +1359,9 @@
         "created": "Storage scheme created",
         "createError": "Error creating storage scheme",
         "deleted": "Storage scheme deleted",
-        "deleteError": "Failed to delete storage scheme"
+        "deleteError": "Failed to delete storage scheme",
+        "updated": "Storage scheme updated",
+        "updateError": "Failed to update storage scheme"
       },
       "providers": {
         "s3": "AWS S3 Compatible Storage",
@@ -1382,11 +1385,13 @@
         "alertDescription": "Files uploaded after changing the storage scheme will be stored in the new scheme. Files already in the original scheme will not be migrated."
       },
       "slideover": {
-        "title": "Create Storage Scheme"
+        "title": "Create Storage Scheme",
+        "editTitle": "Edit Storage Scheme"
       },
       "actions": {
         "add": "Add Storage",
-        "create": "Create Storage"
+        "create": "Create Storage",
+        "edit": "Edit"
       }
     },
     "general": {

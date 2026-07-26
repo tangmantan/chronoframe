@@ -42,17 +42,17 @@ export default eventHandler(async (event) => {
           z.object({
             name: z.string().optional(),
             provider: z.literal('s3'),
-            config: s3StorageConfigSchema.partial(),
+            config: s3StorageConfigSchema,
           }),
           z.object({
             name: z.string().optional(),
             provider: z.literal('local'),
-            config: localStorageConfigSchema.partial(),
+            config: localStorageConfigSchema,
           }),
           z.object({
             name: z.string().optional(),
             provider: z.literal('openlist'),
-            config: openListStorageConfigSchema.partial(),
+            config: openListStorageConfigSchema,
           }),
         ]).parse,
       )

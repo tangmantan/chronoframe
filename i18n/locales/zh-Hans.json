@@ -476,7 +476,8 @@
     },
     "unknownError": "未知错误",
     "validation": {
-      "isRequired": "{field} 为必填项"
+      "isRequired": "{field} 为必填项",
+      "fieldRequired": "此项为必填项"
     }
   },
   "upload": {
@@ -1358,7 +1359,9 @@
         "created": "存储方案已创建",
         "createError": "创建存储方案时出错",
         "deleted": "存储方案已删除",
-        "deleteError": "删除存储方案失败"
+        "deleteError": "删除存储方案失败",
+        "updated": "存储方案已更新",
+        "updateError": "更新存储方案失败"
       },
       "providers": {
         "s3": "AWS S3 兼容存储",
@@ -1382,11 +1385,13 @@
         "alertDescription": "变更存储方案之后上传的文件将会存储到新的存储方案中，原方案中已有文件不会被迁移。"
       },
       "slideover": {
-        "title": "创建存储方案"
+        "title": "创建存储方案",
+        "editTitle": "编辑存储方案"
       },
       "actions": {
         "add": "添加存储",
-        "create": "创建存储"
+        "create": "创建存储",
+        "edit": "编辑"
       }
     },
     "general": {

@@ -456,6 +456,24 @@ export class SettingsManager {
         })
         .where(eq(tables.settings_storage_providers.id, id))
         .run()
+
+      // If the updated provider is the currently active one, reload it into memory
+      const activeProviderId = await settingsManager.get<number>(
+        'storage',
+        'provider',
+      )
+      if (activeProviderId === id) {
+        setImmediate(() => {
+          settingsManager
+            .triggerStorageProviderSwitch(id)
+            .catch((error) => {
+              settingsManager._logger.error(
+                'Failed to refresh active storage provider after update:',
+                error,
+              )
+            })
+        })
+      }
     },
 
     async deleteProvider(id: number): Promise<void> {

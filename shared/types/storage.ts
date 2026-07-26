@@ -2,13 +2,13 @@ import { z } from 'zod'
 
 export const s3StorageConfigSchema = z.object({
   provider: z.literal('s3'),
-  bucket: z.string(),
-  region: z.string().default('auto'),
-  endpoint: z.string(),
+  bucket: z.string().min(1),
+  region: z.string().min(1),
+  endpoint: z.string().min(1),
   prefix: z.string().default('/photos').optional(),
   cdnUrl: z.string().optional(),
-  accessKeyId: z.string(),
-  secretAccessKey: z.string(),
+  accessKeyId: z.string().min(1),
+  secretAccessKey: z.string().min(1),
   forcePathStyle: z.boolean().optional(),
   maxKeys: z.number().optional(),
 })

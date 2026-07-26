@@ -36,6 +36,7 @@ interface Props {
   loadingAuto?: boolean
   class?: string
   fieldsConfig?: Record<string, FieldConfig>
+  translateError?: (message: string, name?: string) => string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -51,6 +52,7 @@ const props = withDefaults(defineProps<Props>(), {
   loadingAuto: true,
   class: undefined,
   fieldsConfig: undefined,
+  translateError: undefined,
 })
 
 const emit = defineEmits<{
@@ -185,6 +187,13 @@ const handleSubmit = (event: FormSubmitEvent<any>) => {
 }
 
 const handleError = (event: FormErrorEvent) => {
+  if (props.translateError && event.errors?.length) {
+    event.errors = event.errors.map((err) => ({
+      ...err,
+      message: props.translateError!(err.message, err.name),
+    }))
+    form.value?.setErrors(event.errors)
+  }
   emit('error', event)
 }
 

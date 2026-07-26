@@ -475,7 +475,8 @@
     },
     "unknownError": "不明なエラー",
     "validation": {
-      "isRequired": "{field} は必須項目です"
+      "isRequired": "{field} は必須項目です",
+      "fieldRequired": "この項目は必須です"
     }
   },
   "dashboard": {
@@ -1283,7 +1284,9 @@
         "created": "ストレージ構成を作成しました",
         "createError": "ストレージ構成の作成中にエラーが発生しました",
         "deleted": "ストレージ構成を削除しました",
-        "deleteError": "ストレージ構成の削除に失敗しました"
+        "deleteError": "ストレージ構成の削除に失敗しました",
+        "updated": "ストレージ構成を更新しました",
+        "updateError": "ストレージ構成の更新に失敗しました"
       },
       "providers": {
         "s3": "AWS S3 互換ストレージ",
@@ -1307,11 +1310,13 @@
         "alertDescription": "ストレージ構成を変更した後にアップロードされたファイルは新しいストレージ構成に保存されます。元の構成にある既存のファイルは移行されません。"
       },
       "slideover": {
-        "title": "ストレージ構成を作成"
+        "title": "ストレージ構成を作成",
+        "editTitle": "ストレージ構成を編集"
       },
       "actions": {
         "add": "ストレージを追加",
-        "create": "ストレージを作成"
+        "create": "ストレージを作成",
+        "edit": "編集"
       }
     },
     "general": {
