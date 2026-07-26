@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import TanmantangIcon from '~/components/icon/TanmantangIcon.vue'
+</script>
 
 <template>
   <div class="relative size-24">
@@ -21,6 +23,9 @@
         src="/web-app-manifest-192x192.png"
         :alt="$t('ui.loading')"
       />
+      <!-- <TanmantangIcon 
+        class="w-full h-full object-cover" 
+      /> -->
     </div>
   </div>
 </template>

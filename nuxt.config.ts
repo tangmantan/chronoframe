@@ -267,7 +267,7 @@ export default defineNuxtConfig({
       cookieKey: 'chronoframe-locale',
     },
     strategy: 'no_prefix',
-    defaultLocale: 'en',
+    defaultLocale: 'zh-Hans',
     locales: [
       {
         code: 'zh-Hans',

@@ -473,7 +473,10 @@
       "continue": "続行",
       "delete": "削除"
     },
-    "unknownError": "不明なエラー"
+    "unknownError": "不明なエラー",
+    "validation": {
+      "isRequired": "{field} は必須項目です"
+    }
   },
   "dashboard": {
     "photos": {
@@ -1352,6 +1355,7 @@
     }
   },
   "onboarding": {
+    "tips": "管理者コンソールで後で変更できます",
     "layout": {
       "steps": {
         "welcome": "ようこそ",
@@ -1366,6 +1370,7 @@
       "logoAlt": "ChronoFrame ロゴ"
     },
     "actions": {
+      "previous": "戻る",
       "next": "次へ",
       "completeSetup": "設定を完了"
     },
@@ -1376,11 +1381,13 @@
       "cards": {
         "admin": {
           "title": "管理者アカウント",
-          "description": "管理コンソールへのログインに使用します"
+          "description": "管理コンソールへのログインに使用します",
+          "invalidUsername": "ユーザー名を入力してください"
         },
         "site": {
           "title": "サイト情報",
-          "description": "ギャラリーをパーソナライズします"
+          "description": "ギャラリーをパーソナライズします",
+          "invalidTitle": "タイトルを入力してください"
         },
         "storage": {
           "title": "ストレージ",

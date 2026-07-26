@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { z } from 'zod'
+import { useWizardStore } from '~/stores/wizard'
 
 definePageMeta({
   layout: 'onboarding',
 })
 
 const router = useRouter()
+const wizardStore = useWizardStore()
+
+// Mark this step as accessible when entering the page
+wizardStore.markStepAccessible(1)
 
 // Use the wizard form composable
 const {
@@ -17,16 +22,16 @@ const {
 
 // Construct schema dynamically or keep it static?
 // For admin, static is safer for the specific password logic,
-// but we can make it partial to allow extra fields if API adds them.
+// but we can make it partial to allow extra fields if API adds them. 
 const schema = z
   .object({
-    username: z.string().min(2, 'Username must be at least 2 characters'),
-    email: z.email('Invalid email address'),
-    password: z.string().min(6, 'Password must be at least 6 characters'),
+    username: z.string().min(2, $t('onboarding.welcome.cards.admin.invalidUsername')), 
+    email: z.email($t('auth.form.errors.invalidEmail')),
+    password: z.string().min(6, $t('auth.form.errors.invalidPassword')),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
+    message: $t('auth.form.errors.confirmPassword'),
     path: ['confirmPassword'],
   })
 
@@ -80,6 +85,14 @@ function onSubmit() {
     </UForm>
 
     <template #actions>
+      <WizardButton
+        to="/onboarding"
+        color="outline"
+        size="lg"
+        leading-icon="tabler:arrow-left"
+      >
+        {{ $t('onboarding.actions.previous') }}
+      </WizardButton>
       <WizardButton
         type="submit"
         form="admin-form"

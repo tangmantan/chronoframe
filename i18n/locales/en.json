@@ -405,7 +405,8 @@
     "form": {
       "errors": {
         "invalidEmail": "Invalid email address",
-        "invalidPassword": "Password must be at least 6 characters"
+        "invalidPassword": "Password must be at least 6 characters",
+        "confirmPassword": "Passwords don't match"
       },
       "signin": {
         "title": "Sign In",
@@ -473,7 +474,10 @@
       "continue": "Continue",
       "delete": "Delete"
     },
-    "unknownError": "Unknown error"
+    "unknownError": "Unknown error",
+    "validation": {
+      "isRequired": "{field} is required"
+    }
   },
   "upload": {
     "duplicate": {
@@ -1426,6 +1430,7 @@
     }
   },
   "onboarding": {
+    "tips": "Don't worry about filling in the wrong information. You can always change it later in the admin console.",
     "layout": {
       "steps": {
         "welcome": "Welcome",
@@ -1440,6 +1445,7 @@
       "logoAlt": "ChronoFrame Logo"
     },
     "actions": {
+      "previous": "Previous",
       "next": "Next",
       "completeSetup": "Complete Setup"
     },
@@ -1470,11 +1476,13 @@
     },
     "admin": {
       "title": "Admin Account",
-      "description": "Create an administrator account"
+      "description": "Create an administrator account",
+      "invalidUsername": "Username must be at least 2 characters"
     },
     "site": {
       "title": "Site Info",
-      "description": "Configure basic site information"
+      "description": "Configure basic site information",
+      "invalidTitle": "Title must be at least 2 characters"
     },
     "storage": {
       "title": "Storage",

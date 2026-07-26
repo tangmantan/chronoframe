@@ -33,6 +33,11 @@ export const APP_SETTINGS_UI: Record<string, FieldUIConfig> = {
     type: 'tabs',
     options: [
       {
+        label: 'settings.app.appearance.theme.system',
+        value: 'system',
+        icon: 'tabler:device-desktop',
+      },
+      {
         label: 'settings.app.appearance.theme.light',
         value: 'light',
         icon: 'tabler:sun',
@@ -41,11 +46,6 @@ export const APP_SETTINGS_UI: Record<string, FieldUIConfig> = {
         label: 'settings.app.appearance.theme.dark',
         value: 'dark',
         icon: 'tabler:moon',
-      },
-      {
-        label: 'settings.app.appearance.theme.system',
-        value: 'system',
-        icon: 'tabler:device-desktop',
       },
     ],
     help: 'settings.app.appearance.theme.help',

@@ -9,6 +9,9 @@ const loading = ref(false)
 const store = useWizardStore()
 const toast = useToast()
 
+// Mark this step as accessible when entering the page
+store.markStepAccessible(5)
+
 async function onComplete() {
   loading.value = true
   try {
