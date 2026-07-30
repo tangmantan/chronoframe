@@ -21,7 +21,7 @@ export const DEFAULT_SETTINGS = [
     namespace: 'app',
     key: 'title',
     type: 'string',
-    defaultValue: 'ChronoFrame',
+    defaultValue: '',
     label: 'settings.app.title.label',
     description: 'settings.app.title.description',
     isPublic: true,
