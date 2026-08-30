@@ -328,6 +328,35 @@ export const STORAGE_SETTINGS_UI: Record<string, FieldUIConfig> = {
   },
 }
 
+export const ANALYTICS_SETTINGS_UI: Record<string, FieldUIConfig> = {
+  gtagId: {
+    type: 'input',
+    placeholder: 'G-XXXXXXXXXX',
+    help: 'settings.analytics.gtagId.help',
+  },
+  bdhmId: {
+    type: 'input',
+    placeholder: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    help: 'settings.analytics.bdhmId.help',
+  },
+  'matomo.enabled': {
+    type: 'toggle',
+    help: 'settings.analytics.matomo.enabled.help',
+  },
+  'matomo.url': {
+    type: 'url',
+    placeholder: 'https://your-matomo-instance.com',
+    help: 'settings.analytics.matomo.url.help',
+    visibleIf: { fieldKey: 'matomo.enabled', value: true },
+  },
+  'matomo.siteId': {
+    type: 'input',
+    placeholder: '',
+    help: 'settings.analytics.matomo.siteId.help',
+    visibleIf: { fieldKey: 'matomo.enabled', value: true },
+  },
+}
+
 /**
  * Get UI configuration for a specific setting
  * Used to return complete field descriptions in the fields.get.ts API
@@ -343,6 +372,7 @@ export function getSettingUIConfig(
     map: MAP_SETTINGS_UI,
     location: LOCATION_SETTINGS_UI,
     storage: STORAGE_SETTINGS_UI,
+    analytics: ANALYTICS_SETTINGS_UI,
   }
 
   return uiConfigMap[namespace]?.[key]

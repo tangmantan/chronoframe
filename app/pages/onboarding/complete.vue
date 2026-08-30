@@ -10,7 +10,7 @@ const store = useWizardStore()
 const toast = useToast()
 
 // Mark this step as accessible when entering the page
-store.markStepAccessible(5)
+store.markStepAccessible(6)
 
 async function onComplete() {
   loading.value = true
@@ -59,6 +59,7 @@ async function onComplete() {
         site: siteData,
         storage: storageData,
         map: mapData,
+        analytics: store.analytics,
       },
     })
 

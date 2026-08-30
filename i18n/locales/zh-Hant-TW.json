@@ -1049,7 +1049,8 @@
       "sections": {
         "thirdPartyLogin": "第三方登入",
         "fileProcessing": "檔案處理",
-        "debugSettings": "除錯設定"
+        "debugSettings": "除錯設定",
+        "analytics": "資料分析"
       },
       "upload": {
         "duplicateCheck": {
@@ -1319,6 +1320,35 @@
         "edit": "編輯"
       }
     },
+    "analytics": {
+      "gtagId": {
+        "label": "Google Analytics 追蹤 ID",
+        "description": "用於 Google Analytics 資料追蹤",
+        "help": "Google Analytics 4 的衡量 ID，格式為 G-XXXXXXXXXX"
+      },
+      "bdhmId": {
+        "label": "百度統計分析 ID",
+        "description": "用於百度統計分析追蹤",
+        "help": "百度統計的站點 ID"
+      },
+      "matomo": {
+        "enabled": {
+          "label": "啟用 Matomo 分析",
+          "description": "是否啟用 Matomo 分析追蹤",
+          "help": "開啟後將載入 Matomo 追蹤腳本"
+        },
+        "url": {
+          "label": "Matomo 實例 URL",
+          "description": "Matomo 實例的存取地址",
+          "help": "例如 https://your-matomo-instance.com"
+        },
+        "siteId": {
+          "label": "Matomo 站點 ID",
+          "description": "Matomo 中設定的站點 ID",
+          "help": "在 Matomo 後台查看站點 ID"
+        }
+      }
+    },
     "general": {
       "description": "管理站點基礎資訊與展示外觀。更改會立即影響控制台和前台展示。"
     },
@@ -1368,6 +1398,7 @@
         "site": "站點資訊",
         "storage": "儲存設定",
         "map": "地圖服務",
+        "analytics": "資料分析",
         "complete": "完成"
       },
       "current": "進行中",
@@ -1399,6 +1430,10 @@
         "map": {
           "title": "地圖服務",
           "description": "位置可視化與拍攝地標記"
+        },
+        "analytics": {
+          "title": "資料分析",
+          "description": "設定 Google Analytics、百度統計等追蹤服務"
         }
       },
       "privacyNotice": "ChronoFrame 不會收集你的任何資料。",
@@ -1412,7 +1447,7 @@
     "site": {
       "title": "站點資訊",
       "description": "設定站點基本資訊",
-      "invalidTitle": "標題名稱必須至少包含2個字元" 
+      "invalidTitle": "標題名稱必須至少包含2個字元"
     },
     "storage": {
       "title": "儲存設定",
@@ -1421,6 +1456,10 @@
     "map": {
       "title": "地圖服務",
       "description": "為地球儀檢視與照片詳情小地圖設定地圖服務"
+    },
+    "analytics": {
+      "title": "資料分析",
+      "description": "設定資料分析與追蹤服務"
     },
     "complete": {
       "title": "即將完成！",

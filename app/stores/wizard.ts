@@ -8,6 +8,9 @@ export const useWizardStore = defineStore('wizard', () => {
     useLocalStorage<Record<string, any>>('wizard-storage', {}),
   )
   const map = ref(useLocalStorage<Record<string, any>>('wizard-map', {}))
+  const analytics = ref(
+    useLocalStorage<Record<string, any>>('wizard-analytics', {}),
+  )
   const completedSteps = ref(
     useLocalStorage<number[]>('wizard-completed-steps', [0]),
   )
@@ -28,6 +31,10 @@ export const useWizardStore = defineStore('wizard', () => {
     map.value = { ...map.value, ...data }
   }
 
+  const updateAnalytics = (data: Record<string, any>) => {
+    analytics.value = { ...analytics.value, ...data }
+  }
+
   const markStepAccessible = (step: number) => {
     if (!completedSteps.value.includes(step)) {
       completedSteps.value = [...completedSteps.value, step]
@@ -39,6 +46,7 @@ export const useWizardStore = defineStore('wizard', () => {
     site.value = {}
     storage.value = {}
     map.value = {}
+    analytics.value = {}
     completedSteps.value = [0]
   }
 
@@ -47,11 +55,13 @@ export const useWizardStore = defineStore('wizard', () => {
     site,
     storage,
     map,
+    analytics,
     completedSteps,
     updateAdmin,
     updateSite,
     updateStorage,
     updateMap,
+    updateAnalytics,
     markStepAccessible,
     clear,
   }

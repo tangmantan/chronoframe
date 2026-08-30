@@ -1124,7 +1124,8 @@
       "sections": {
         "thirdPartyLogin": "Third-Party Login",
         "fileProcessing": "File Processing",
-        "debugSettings": "Debug Settings"
+        "debugSettings": "Debug Settings",
+        "analytics": "Analytics"
       },
       "upload": {
         "duplicateCheck": {
@@ -1394,6 +1395,35 @@
         "edit": "Edit"
       }
     },
+    "analytics": {
+      "gtagId": {
+        "label": "Google Analytics Tracking ID",
+        "description": "Used for Google Analytics data tracking",
+        "help": "Google Analytics 4 measurement ID, format: G-XXXXXXXXXX"
+      },
+      "bdhmId": {
+        "label": "Baidu Analytics ID",
+        "description": "Used for Baidu analytics tracking",
+        "help": "Baidu Analytics site ID"
+      },
+      "matomo": {
+        "enabled": {
+          "label": "Enable Matomo Analytics",
+          "description": "Whether to enable Matomo analytics tracking",
+          "help": "When enabled, Matomo tracking script will be loaded"
+        },
+        "url": {
+          "label": "Matomo Instance URL",
+          "description": "The URL of your Matomo instance",
+          "help": "e.g. https://your-matomo-instance.com"
+        },
+        "siteId": {
+          "label": "Matomo Site ID",
+          "description": "The site ID configured in Matomo",
+          "help": "Find the site ID in your Matomo dashboard"
+        }
+      }
+    },
     "general": {
       "description": "Manage the site's basic information and display appearance. Changes will immediately affect the dashboard and public-facing display."
     },
@@ -1443,6 +1473,7 @@
         "site": "Site Info",
         "storage": "Storage",
         "map": "Map Service",
+        "analytics": "Analytics",
         "complete": "Complete"
       },
       "current": "In Progress",
@@ -1474,6 +1505,10 @@
         "map": {
           "title": "Map Service",
           "description": "Visualize locations and mark shooting spots"
+        },
+        "analytics": {
+          "title": "Analytics",
+          "description": "Configure Google Analytics, Baidu Analytics and other tracking services"
         }
       },
       "privacyNotice": "ChronoFrame does not collect any of your data.",
@@ -1496,6 +1531,10 @@
     "map": {
       "title": "Map Service",
       "description": "Configure map service for globe view and photo minimap"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "Configure analytics and tracking services"
     },
     "complete": {
       "title": "Almost Done!",

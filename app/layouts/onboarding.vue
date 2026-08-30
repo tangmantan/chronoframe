@@ -11,6 +11,10 @@ const steps = computed(() => [
   { label: $t('onboarding.layout.steps.site'), route: 'onboarding-site' },
   { label: $t('onboarding.layout.steps.storage'), route: 'onboarding-storage' },
   { label: $t('onboarding.layout.steps.map'), route: 'onboarding-map' },
+  {
+    label: $t('onboarding.layout.steps.analytics'),
+    route: 'onboarding-analytics',
+  },
   { label: $t('onboarding.layout.steps.complete'), route: 'onboarding-complete' },
 ])
 

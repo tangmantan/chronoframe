@@ -98,6 +98,16 @@ NUXT_PROVIDER_LOCAL_PATH=/app/data/storage
 
 # Session password (32‑char random string, required)
 NUXT_SESSION_PASSWORD=
+
+# Analytics (optional)
+# Google Analytics Measurement ID (e.g. G-XXXXXXX)
+NUXT_PUBLIC_GTAG_ID=
+# Baidu Analytics ID
+NUXT_PUBLIC_BDHM_ID=
+# Matomo Analytics
+NUXT_PUBLIC_ANALYTICS_MATOMO_ENABLED=false
+NUXT_PUBLIC_ANALYTICS_MATOMO_URL=
+NUXT_PUBLIC_ANALYTICS_MATOMO_SITE_ID=
 ```
 
 ### Pull Image

@@ -88,6 +88,26 @@ definePageMeta({
             </p>
           </div>
         </div>
+        <div
+          class="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4"
+        >
+          <div
+            class="size-12 flex items-center justify-center rounded-lg bg-orange-500/20 text-orange-400"
+          >
+            <UIcon
+              name="tabler:chart-bar"
+              class="size-6"
+            />
+          </div>
+          <div>
+            <h3 class="font-medium text-white">
+              {{ $t('onboarding.welcome.cards.analytics.title') }}
+            </h3>
+            <p class="text-sm text-neutral-400 mt-1">
+              {{ $t('onboarding.welcome.cards.analytics.description') }}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 

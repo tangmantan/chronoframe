@@ -1124,7 +1124,8 @@
       "sections": {
         "thirdPartyLogin": "第三方登录",
         "fileProcessing": "文件处理",
-        "debugSettings": "调试设置"
+        "debugSettings": "调试设置",
+        "analytics": "数据分析"
       },
       "upload": {
         "duplicateCheck": {
@@ -1394,6 +1395,35 @@
         "edit": "编辑"
       }
     },
+    "analytics": {
+      "gtagId": {
+        "label": "Google Analytics 追踪 ID",
+        "description": "用于 Google Analytics 数据追踪",
+        "help": "Google Analytics 4 的衡量 ID，格式为 G-XXXXXXXXXX"
+      },
+      "bdhmId": {
+        "label": "百度统计分析 ID",
+        "description": "用于百度统计分析追踪",
+        "help": "百度统计的站点 ID"
+      },
+      "matomo": {
+        "enabled": {
+          "label": "启用 Matomo 分析",
+          "description": "是否启用 Matomo 分析追踪",
+          "help": "开启后将加载 Matomo 追踪脚本"
+        },
+        "url": {
+          "label": "Matomo 实例 URL",
+          "description": "Matomo 实例的访问地址",
+          "help": "例如 https://your-matomo-instance.com"
+        },
+        "siteId": {
+          "label": "Matomo 站点 ID",
+          "description": "Matomo 中配置的站点 ID",
+          "help": "在 Matomo 后台查看站点 ID"
+        }
+      }
+    },
     "general": {
       "description": "管理站点基础信息与展示外观。更改会立即影响控制台和前台展示。"
     },
@@ -1443,6 +1473,7 @@
         "site": "站点信息",
         "storage": "存储配置",
         "map": "地图服务",
+        "analytics": "数据分析",
         "complete": "完成"
       },
       "current": "当前进行",
@@ -1476,6 +1507,10 @@
         "map": {
           "title": "地图服务",
           "description": "位置可视化、照片拍摄地标记"
+        },
+        "analytics": {
+          "title": "数据分析",
+          "description": "配置谷歌分析、百度统计等追踪服务"
         }
       },
       "privacyNotice": "ChronoFrame 不会收集您的任何数据。",
@@ -1496,6 +1531,10 @@
     "map": {
       "title": "地图服务",
       "description": "为地球仪视图以及照片详情中的小地图配置地图服务"
+    },
+    "analytics": {
+      "title": "数据分析",
+      "description": "配置数据分析与追踪服务"
     },
     "complete": {
       "title": "即将完成！",

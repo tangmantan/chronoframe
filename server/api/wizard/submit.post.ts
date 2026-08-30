@@ -27,6 +27,7 @@ export default eventHandler(async (event) => {
         token: z.string().min(1),
         style: z.string().optional(),
       }),
+      analytics: z.record(z.any()).optional(),
     }).parse,
   )
 
@@ -98,10 +99,19 @@ export default eventHandler(async (event) => {
       await settingsManager.set('map', 'maplibre.style', body.map.style)
   }
 
-  // 5. Mark Complete
+  // 5. Handle Analytics Settings
+  if (body.analytics) {
+    for (const [key, value] of Object.entries(body.analytics)) {
+      if (value !== undefined && value !== null && value !== '') {
+        await settingsManager.set('analytics', key as any, value)
+      }
+    }
+  }
+
+  // 6. Mark Complete
   await settingsManager.set('system', 'firstLaunch', false, undefined, true)
 
-  // 6. Auto-login the admin user
+  // 7. Auto-login the admin user
   if (adminUser) {
     await setUserSession(
       event,

@@ -1049,7 +1049,8 @@
       "sections": {
         "thirdPartyLogin": "外部ログイン",
         "fileProcessing": "ファイル処理",
-        "debugSettings": "デバッグ設定"
+        "debugSettings": "デバッグ設定",
+        "analytics": "アナリティクス"
       },
       "upload": {
         "duplicateCheck": {
@@ -1319,6 +1320,35 @@
         "edit": "編集"
       }
     },
+    "analytics": {
+      "gtagId": {
+        "label": "Google Analytics トラッキング ID",
+        "description": "Google Analytics のデータ追跡に使用",
+        "help": "Google Analytics 4 の測定 ID（形式: G-XXXXXXXXXX）"
+      },
+      "bdhmId": {
+        "label": "百度統計分析 ID",
+        "description": "百度統計分析の追跡に使用",
+        "help": "百度統計のサイト ID"
+      },
+      "matomo": {
+        "enabled": {
+          "label": "Matomo 分析を有効にする",
+          "description": "Matomo 分析追跡を有効にするかどうか",
+          "help": "有効にすると、Matomo トラッキングスクリプトが読み込まれます"
+        },
+        "url": {
+          "label": "Matomo インスタンス URL",
+          "description": "Matomo インスタンスのアドレス",
+          "help": "例: https://your-matomo-instance.com"
+        },
+        "siteId": {
+          "label": "Matomo サイト ID",
+          "description": "Matomo で設定したサイト ID",
+          "help": "Matomo ダッシュボードでサイト ID を確認してください"
+        }
+      }
+    },
     "general": {
       "description": "サイトの基本情報と表示外観を管理します。変更はダッシュボードと公開側の表示に即時反映されます。"
     },
@@ -1368,6 +1398,7 @@
         "site": "サイト情報",
         "storage": "ストレージ設定",
         "map": "地図サービス",
+        "analytics": "アナリティクス",
         "complete": "完了"
       },
       "current": "進行中",
@@ -1400,7 +1431,11 @@
         },
         "map": {
           "title": "地図サービス",
-          "description": "位置の可視化と撮影地点の表示"
+          "description": "位置の可視化と撮影スポットのマーキング"
+        },
+        "analytics": {
+          "title": "アナリティクス",
+          "description": "Google Analytics、百度統計などのトラッキングサービスを設定します"
         }
       },
       "privacyNotice": "ChronoFrame はあなたのデータを収集しません。",
@@ -1421,6 +1456,10 @@
     "map": {
       "title": "地図サービス",
       "description": "グローブ表示と写真詳細のミニマップ向けに地図サービスを設定します"
+    },
+    "analytics": {
+      "title": "アナリティクス",
+      "description": "分析・トラッキングサービスを設定します"
     },
     "complete": {
       "title": "まもなく完了です！",

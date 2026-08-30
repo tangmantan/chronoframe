@@ -30,6 +30,8 @@ export function useWizardForm(namespace: string) {
           return store.storage
         case 'map':
           return store.map
+        case 'analytics':
+          return store.analytics
         default:
           return {}
       }
@@ -47,6 +49,9 @@ export function useWizardForm(namespace: string) {
           break
         case 'map':
           store.updateMap(val)
+          break
+        case 'analytics':
+          store.updateAnalytics(val)
           break
       }
     },

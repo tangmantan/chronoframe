@@ -16,8 +16,20 @@ const {
   loading: systemLoading,
 } = useSettingsForm('system')
 
+// Analytics settings
+const {
+  fields: rawAnalyticsFields,
+  state: analyticsState,
+  submit: submitAnalytics,
+  loading: analyticsLoading,
+} = useSettingsForm('analytics')
+
 const systemFields = computed(() =>
   rawSystemFields.value.filter((field) => !field.isReadonly),
+)
+
+const analyticsFields = computed(() =>
+  rawAnalyticsFields.value.filter((field) => !field.isReadonly),
 )
 
 type SystemSection = {
@@ -98,6 +110,36 @@ const handleSectionSettingsSubmit = async (
 
   try {
     await submitSystem(systemData)
+  } catch {
+    /* empty */
+  }
+}
+
+// Analytics section helpers
+const getDefaultAnalyticsFieldValue = (
+  field: (typeof rawAnalyticsFields.value)[number],
+) => field.value ?? field.defaultValue ?? null
+
+const isAnalyticsFieldDirty = (
+  field: (typeof rawAnalyticsFields.value)[number],
+) => !sameValue(analyticsState[field.key], getDefaultAnalyticsFieldValue(field))
+
+const isAnalyticsDirty = computed(() =>
+  analyticsFields.value.some((field) => isAnalyticsFieldDirty(field)),
+)
+
+const resetAnalyticsSettings = () => {
+  analyticsFields.value.forEach((field) => {
+    analyticsState[field.key] = getDefaultAnalyticsFieldValue(field)
+  })
+}
+
+const handleAnalyticsSubmit = async () => {
+  const data = Object.fromEntries(
+    analyticsFields.value.map((f) => [f.key, analyticsState[f.key]]),
+  )
+  try {
+    await submitAnalytics(data)
   } catch {
     /* empty */
   }
@@ -196,6 +238,83 @@ const handleSectionSettingsSubmit = async (
                 type="submit"
                 :form="getSectionFormId(section.id)"
                 :disabled="!isSectionDirty(section)"
+                icon="tabler:device-floppy"
+              >
+                {{ $t('common.actions.saveSettings') }}
+              </UButton>
+            </div>
+          </footer>
+        </section>
+
+        <!-- Analytics Settings -->
+        <template v-if="analyticsLoading && analyticsFields.length === 0">
+          <section
+            class="rounded-md border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950"
+          >
+            <header
+              class="border-b border-neutral-200 px-5 py-4 dark:border-neutral-800"
+            >
+              <USkeleton class="h-5 w-32" />
+            </header>
+            <div class="space-y-4 px-5 py-5">
+              <USkeleton class="h-4 w-40" />
+              <USkeleton class="h-10 w-full" />
+            </div>
+          </section>
+        </template>
+
+        <section
+          v-if="analyticsFields.length > 0"
+          class="rounded-md border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950"
+        >
+          <header
+            class="border-b border-neutral-200 px-5 py-4 dark:border-neutral-800"
+          >
+            <h3
+              class="text-base font-semibold text-neutral-900 dark:text-neutral-100"
+            >
+              {{ $t('settings.system.sections.analytics') }}
+            </h3>
+          </header>
+
+          <UForm
+            id="systemSettingsForm-analytics"
+            class="space-y-5 px-5 py-5"
+            @submit="handleAnalyticsSubmit"
+          >
+            <SettingField
+              v-for="field in analyticsFields"
+              :key="field.key"
+              :field="field"
+              :model-value="analyticsState[field.key]"
+              @update:model-value="(val) => (analyticsState[field.key] = val)"
+            />
+          </UForm>
+
+          <footer
+            class="border-t border-neutral-200 px-5 py-4 dark:border-neutral-800"
+          >
+            <div
+              v-if="isAnalyticsDirty"
+              class="mb-3 rounded-md border border-warning-200 bg-warning-50 px-3 py-2 text-sm text-warning-800 dark:border-warning-900/60 dark:bg-warning-950/30 dark:text-warning-200"
+            >
+              {{ $t('common.unsavedChanges') }}
+            </div>
+
+            <div class="flex items-center justify-end gap-2">
+              <UButton
+                color="neutral"
+                variant="outline"
+                :disabled="!isAnalyticsDirty"
+                @click="resetAnalyticsSettings"
+              >
+                {{ $t('common.actions.reset') }}
+              </UButton>
+              <UButton
+                :loading="analyticsLoading"
+                type="submit"
+                form="systemSettingsForm-analytics"
+                :disabled="!isAnalyticsDirty"
                 icon="tabler:device-floppy"
               >
                 {{ $t('common.actions.saveSettings') }}

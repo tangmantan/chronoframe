@@ -43,6 +43,7 @@ Whether using Docker or Docker Compose (.env) deployment, configuration is done 
 | NUXT_OAUTH_GITHUB_CLIENT_SECRET          | GitHub OAuth app Client Secret                                  | None                                  | No (optional, for GitHub login)                      |
 | NUXT_SESSION_PASSWORD                    | Password for encrypting sessions, 32-character random string    | None                                  | Yes                                                  |
 | NUXT_PUBLIC_GTAG_ID                      | Google Analytics Tracking ID                                    | None                                  | No                                                   |
+| NUXT_PUBLIC_BDHM_ID                      | Baidu Analytics ID                                              | None                                  | No                                                   |
 | NUXT_PUBLIC_ANALYTICS_MATOMO_ENABLED     | Enable Matomo analytics tracking                                | `false`                               | No                                                   |
 | NUXT_PUBLIC_ANALYTICS_MATOMO_URL         | Matomo instance URL (e.g., https://matomo.example.com)          | None                                  | No (required when Matomo is enabled)                 |
 | NUXT_PUBLIC_ANALYTICS_MATOMO_SITE_ID     | Matomo site ID                                                  | None                                  | No (required when Matomo is enabled)                 |

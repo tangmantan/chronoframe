@@ -221,6 +221,52 @@ export const DEFAULT_SETTINGS = [
     label: 'settings.storage_provider.provider.label',
     description: 'settings.storage_provider.provider.description',
   },
+  // NAMESPACE: analytics
+  {
+    namespace: 'analytics',
+    key: 'gtagId',
+    type: 'string',
+    defaultValue: '',
+    label: 'settings.analytics.gtagId.label',
+    description: 'settings.analytics.gtagId.description',
+    isPublic: true,
+  },
+  {
+    namespace: 'analytics',
+    key: 'bdhmId',
+    type: 'string',
+    defaultValue: '',
+    label: 'settings.analytics.bdhmId.label',
+    description: 'settings.analytics.bdhmId.description',
+    isPublic: true,
+  },
+  {
+    namespace: 'analytics',
+    key: 'matomo.enabled',
+    type: 'boolean',
+    defaultValue: false,
+    label: 'settings.analytics.matomo.enabled.label',
+    description: 'settings.analytics.matomo.enabled.description',
+    isPublic: true,
+  },
+  {
+    namespace: 'analytics',
+    key: 'matomo.url',
+    type: 'string',
+    defaultValue: '',
+    label: 'settings.analytics.matomo.url.label',
+    description: 'settings.analytics.matomo.url.description',
+    isPublic: true,
+  },
+  {
+    namespace: 'analytics',
+    key: 'matomo.siteId',
+    type: 'string',
+    defaultValue: '',
+    label: 'settings.analytics.matomo.siteId.label',
+    description: 'settings.analytics.matomo.siteId.description',
+    isPublic: true,
+  },
 ] as const satisfies SettingConfig[]
 
 export const settingNamespaces = [

@@ -44,7 +44,7 @@ const schema = computed(() => {
 function onSubmit() {
   // Validation passed, data is already in the store via useWizardForm binding
   // Transformation of map config will happen in the final step
-  router.push('/onboarding/complete')
+  router.push('/onboarding/analytics')
 }
 </script>
 
@@ -132,7 +132,7 @@ function onSubmit() {
         :disabled="fetchingSchema"
         trailing-icon="tabler:arrow-right"
       >
-        {{ $t('onboarding.actions.completeSetup') }}
+        {{ $t('onboarding.actions.next') }}
       </WizardButton>
     </template>
   </WizardStep>
