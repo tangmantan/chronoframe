@@ -33,8 +33,6 @@ export default defineNuxtPlugin((_nuxtApp) => {
     // Baidu Analytics
     const bdhmId = getSetting('analytics:bdhmId')
 
-    console.log(bdhmId)
-
     if (bdhmId) {
       result.push({
         innerHTML: `

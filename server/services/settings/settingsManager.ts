@@ -164,6 +164,19 @@ export class SettingsManager {
             enum: config.enum ? config.enum : null,
           })
           .run()
+      } else {
+        // Update isPublic flag if it differs from config
+        if (existing.isPublic !== config.isPublic) {
+          db.update(tables.settings)
+            .set({ isPublic: config.isPublic })
+            .where(
+              and(
+                eq(tables.settings.namespace, config.namespace),
+                eq(tables.settings.key, config.key),
+              ),
+            )
+            .run()
+        }
       }
     }
   }
