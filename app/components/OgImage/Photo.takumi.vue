@@ -32,12 +32,12 @@ const thumbnailUrl = computed(() =>
       v-if="thumbnailUrl"
       :src="thumbnailUrl"
       class="absolute inset-y-0 right-0 object-cover"
-      width="60%"
+      width="80%"
       height="100%"
     />
     <div
       v-if="thumbnailUrl"
-      class="og-photo__gradient absolute inset-y-0 right-0 w-[60%]"
+      class="og-photo__gradient absolute inset-y-0 right-0 w-[80%]"
     />
     <div
       class="h-full flex flex-col justify-between pl-24 py-16 bg-neutral-950/10"
