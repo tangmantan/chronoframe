@@ -29,7 +29,9 @@
 
 A smooth photo display and management application, supporting multiple image formats and large-size image rendering.
 
-[Live Demo: TimoYin's Mems](https://lens.bh8.ga)
+Live Demo:
+
+[隅影（This repository）](https://oreo.tanmantang.com) or [TimoYin's Mems（author）](https://lens.bh8.ga)
 
 ## ✨ Features
 
@@ -56,9 +58,13 @@ A smooth photo display and management application, supporting multiple image for
 
 ## 🐳 Deployment
 
-We recommend deploying with the prebuilt Docker image. [View the image on ghcr](https://github.com/HoshinoSuzumi/chronoframe/pkgs/container/chronoframe)
+This repository is a modified version of [ChronoFrame](https://github.com/HoshinoSuzumi/chronoframe), with some added features and optimizations. If you wish to deploy an image from this repository, please refer to the following steps:
 
-Create a `.env` file and configure environment variables.
+We recommend deploying with the prebuilt Docker image. [View the image on ghcr](https://github.com/tangmantan/chronoframe/pkgs/container/chronoframe)
+
+Create a `.env` file and configure environment variables. 
+
+Tip: Version 1.0.0. rc.3 and later versions do not require manual creation of `.env` configuration files. After starting the image, accessing the page allows for direct configuration of environment variables. But it is still recommended to use the `.env` configuration file.
 
 Below is a **minimal configuration** example. For complete configuration options, see [Configuration Guide](https://chronoframe.bh8.ga/guide/configuration.html):
 
@@ -101,15 +107,24 @@ NUXT_OG_IMAGE_SECRET=
 
 Use the published image on GitHub Container Registry and Docker Hub. Choose the source that works best for your network:
 
-#### [GitHub Container Registry (GHCR)](https://github.com/HoshinoSuzumi/chronoframe/pkgs/container/chronoframe)
+#### Use [GitHub Container Registry (GHCR)](https://github.com/tangmantan/chronoframe/pkgs/container/chronoframe)
 
 ```bash
+# tangmantan Images
+docker pull ghcr.io/tangmantan/chronoframe:latest
+
+# Or Use HoshinoSuzumi Images
 docker pull ghcr.io/hoshinosuzumi/chronoframe:latest
+
 ```
 
-#### [Docker Hub](https://hub.docker.com/r/hoshinosuzumi/chronoframe)
+#### Use [Docker Hub](https://hub.docker.com/r/tangmantan/chronoframe)
 
 ```bash
+# tangmantan Images
+docker pull tangmantan/chronoframe:latest
+
+# Or Use HoshinoSuzumi Images
 docker pull hoshinosuzumi/chronoframe:latest
 ```
 
@@ -118,7 +133,10 @@ docker pull hoshinosuzumi/chronoframe:latest
 Run with customized environment variables:
 
 ```bash
-docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env ghcr.io/hoshinosuzumi/chronoframe:latest
+docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env ghcr.io/tangmantan/chronoframe:latest
+
+# Or Use HoshinoSuzumi Images
+docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env ghcr.io/hoshinoSuzumi/chronoframe:latest
 ```
 
 ### Docker Compose
@@ -128,7 +146,7 @@ Create docker-compose.yml:
 ```yaml
 services:
   chronoframe:
-    image: ghcr.io/hoshinosuzumi/chronoframe:latest
+    image: ghcr.io/tangmantan/chronoframe:latest
     container_name: chronoframe
     restart: unless-stopped
     ports:

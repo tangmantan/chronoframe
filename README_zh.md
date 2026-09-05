@@ -29,7 +29,9 @@
 
 丝滑的照片展示和管理应用，支持多种图片格式和大尺寸图片渲染。
 
-[在线演示: TimoYin's Mems](https://lens.bh8.ga)
+在线演示: 
+
+[隅影（本站）](https://oreo.tanmantang.com) 或 [TimoYin's Mems（作者）](https://lens.bh8.ga)
 
 ## ✨ 特性
 
@@ -56,9 +58,12 @@
 
 ## 🐳 部署
 
-推荐使用预构建的 docker 镜像部署，[在 ghcr 上查看镜像](https://github.com/HoshinoSuzumi/chronoframe/pkgs/container/chronoframe)
+本仓库是在 [ChronoFrame](https://github.com/HoshinoSuzumi/chronoframe) 基础上进行的修改，添加了一些功能和优化。若您想部署本仓库的镜像，请参考以下步骤：
+
+推荐使用预构建的 docker 镜像部署，[在 ghcr 上查看镜像](https://github.com/tangmantan/chronoframe/pkgs/container/chronoframe)
 
 创建 `.env` 文件并配置。
+提示：版本 1.0.0.rc.3 及以后版本可不用手动创建.env配置文件，启动镜像后访问页面可以直接配置环境变量。但依旧推荐使用.env配置文件的方式。
 
 下面是**最小化配置**示例，完整的配置项参考 [配置指南](https://chronoframe.bh8.ga/zh/guide/configuration.html)：
 
@@ -101,15 +106,25 @@ NUXT_OG_IMAGE_SECRET=
 
 我们推荐使用预构建的 Docker 镜像进行部署，镜像托管在 GHCR 和 Docker Hub，您可以根据网络情况选择合适的源。
 
-#### [GitHub Container Registry (GHCR)](https://github.com/HoshinoSuzumi/chronoframe/pkgs/container/chronoframe)
+#### 使用 [GitHub Container Registry (GHCR)](https://github.com/tangmantan/chronoframe/pkgs/container/chronoframe)
 
 ```bash
+# tangmantan 镜像
+docker pull ghcr.io/tangmantan/chronoframe:latest
+
+# HoshinoSuzumi 镜像
+
 docker pull ghcr.io/hoshinosuzumi/chronoframe:latest
+
 ```
 
-#### [Docker Hub](https://hub.docker.com/r/hoshinosuzumi/chronoframe)
+#### 使用 [Docker Hub](https://hub.docker.com/r/tangmantan/chronoframe)
 
 ```bash
+# 使用tangmantan 镜像
+docker pull tangmantan/chronoframe:latest
+
+# 使用HoshinoSuzumi 镜像
 docker pull hoshinosuzumi/chronoframe:latest
 ```
 
@@ -118,7 +133,11 @@ docker pull hoshinosuzumi/chronoframe:latest
 一行命令启动：
 
 ```bash
-docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env ghcr.io/hoshinosuzumi/chronoframe:latest
+# 使用 tangmantan 镜像
+docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env ghcr.io/tangmantan/chronoframe:latest
+
+# 或使用 HoshinoSuzumi 镜像
+docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-file .env ghcr.io/hoshinoSuzumi/chronoframe:latest
 ```
 
 ### Docker Compose
@@ -128,7 +147,7 @@ docker run -d --name chronoframe -p 3000:3000 -v $(pwd)/data:/app/data --env-fil
 ```yaml
 services:
   chronoframe:
-    image: ghcr.io/hoshinosuzumi/chronoframe:latest
+    image: ghcr.io/tangmantan/chronoframe:latest
     container_name: chronoframe
     restart: unless-stopped
     ports:
